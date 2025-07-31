@@ -1,48 +1,46 @@
-
 import java.util.*;
 
 public class Solution {
-	public static int[] solution(String[] genres, int[] plays) {
-        ArrayList<Integer> result = new ArrayList<>(); // Á¤´ä ¹è¿­
+    public static int[] solution(String[] genres, int[] plays) {
+        ArrayList<Integer> result = new ArrayList<>(); // ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
         HashMap<String, Integer> total = new HashMap<>();
         HashMap<String, HashMap<Integer, Integer>> music = new HashMap<>();
-        
-        for (int i=0; i<genres.length; i++){
-        	if (!total.containsKey(genres[i])) {// ÇØ´ç Àå¸£°¡ genre ÇØ½Ã¸Ê¿¡ Á¸ÀçÇÏÁö ¾Ê´Ù¸é
-        		HashMap<Integer, Integer> m = new HashMap<>();
-        		m.put(i,  plays[i]);
-        		music.put(genres[i], m);
-        		total.put(genres[i], plays[i]);
-        		
-        	}else { // ÇØ´ç Àå¸£°¡ ÀÌ¹Ì ÇØ½Ã¸Ê¿¡ Á¸ÀçÇÑ´Ù¸é
-        		music.get(genres[i]).put(i, plays[i]);//À½¾Ç °íÀ¯¹øÈ£ º° Àç»ýÈ½¼ö ÀúÀå
-        		total.put(genres[i], total.get(genres[i])+plays[i]); // Àå¸£º° ÃÑ ÇÃ·¹ÀÌ È½¼ö ÀúÀå
-        		
-        	}
-        }//¿©±â±îÁø Çß´Âµ¥ ±× µÚ´Â Âü°íÇØ¼­ Ç®¾ú½À´Ï´Ù
-        
-        //ÃÑ Àç»ý È½¼ö ÇØ½Ã¸Ê totalÀ» Á¤·ÄÇÏ±â À§ÇØ List·Î º¯È¯
+
+        for (int i = 0; i < genres.length; i++) {
+            if (!total.containsKey(genres[i])) {// ï¿½Ø´ï¿½ ï¿½å¸£ï¿½ï¿½ genre ï¿½Ø½Ã¸Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½
+                HashMap<Integer, Integer> m = new HashMap<>();
+                m.put(i, plays[i]);
+                music.put(genres[i], m);
+                total.put(genres[i], plays[i]);
+
+            } else { // ï¿½Ø´ï¿½ ï¿½å¸£ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½Ø½Ã¸Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½
+                music.get(genres[i]).put(i, plays[i]);// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ ï¿½ï¿½ï¿½È½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                total.put(genres[i], total.get(genres[i]) + plays[i]); // ï¿½å¸£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+            }
+        } // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß´Âµï¿½ ï¿½ï¿½ ï¿½Ú´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ Ç®ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½
+
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½Ø½Ã¸ï¿½ totalï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ Listï¿½ï¿½ ï¿½ï¿½È¯
         List<String> genreSort = new ArrayList<>(total.keySet());
         genreSort.sort((o1, o2) -> total.get(o2).compareTo(total.get(o1)));
-        for (String key: genreSort) {
-        	HashMap<Integer, Integer> map = music.get(key);
-        	List<Integer> genre_key = new ArrayList<>(map.keySet());
-        	
-        	Collections.sort(genre_key, (o1, o2)-> map.get(o2)-(map.get(o1)));
-        	result.add(genre_key.get(0));
-        	if (genre_key.size()>1) {
-        		result.add(genre_key.get(1));
-        	}
-        }
-        return result.stream().mapToInt(i->i).toArray();
-    }
-	public static void main(String[] args) {
-        String[] genres = {"classic", "pop", "classic", "classic", "pop"};
-        int[] plays = {500, 600, 150, 800, 2500};
+        for (String key : genreSort) {
+            HashMap<Integer, Integer> map = music.get(key);
+            List<Integer> genre_key = new ArrayList<>(map.keySet());
 
-        System.out.println(Arrays.toString(solution(genres, plays)));   // [4, 1, 3, 0]
+            Collections.sort(genre_key, (o1, o2) -> map.get(o2) - (map.get(o1)));
+            result.add(genre_key.get(0));
+            if (genre_key.size() > 1) {
+                result.add(genre_key.get(1));
+            }
+        }
+        return result.stream().mapToInt(i -> i).toArray();
     }
-	
+
+    public static void main(String[] args) {
+        String[] genres = { "classic", "pop", "classic", "classic", "pop" };
+        int[] plays = { 500, 600, 150, 800, 2500 };
+
+        System.out.println(Arrays.toString(solution(genres, plays))); // [4, 1, 3, 0]
+    }
 
 }
-
