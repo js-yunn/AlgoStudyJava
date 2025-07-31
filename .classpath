@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="baekjoon/bj_1012_유기농배추"/>
+	<classpathentry kind="src" path="baekjoon/bj_24479_알고리즘수업"/>
+	<classpathentry kind="src" path="programmers/pr_베스트앨범"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
