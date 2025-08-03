@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="baekjoon/bj_1012_유기농배추"/>
 	<classpathentry kind="src" path="baekjoon/bj_24479_알고리즘수업"/>
 	<classpathentry kind="src" path="programmers/pr_베스트앨범"/>
+	<classpathentry kind="src" path="bj_상어초등학교"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
