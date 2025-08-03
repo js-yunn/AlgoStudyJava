@@ -28,37 +28,16 @@ public class Main {
             map[b].add(a);
 
         }
-        // 방문 순서 오름차순 정렬-> why need>??
+        // 방문 순서 오름차순 정렬
         for (ArrayList<Integer> m : map) {
             Collections.sort(m);
         }
+        // DFS 진행
         dfs(V);
         System.out.println();
+        // visited 초기화 후 BFS 진행
         Arrays.fill(visited, false);
-        bfs(V);
-
-    }
-
-    public static void dfs(int x) {
-        System.out.printf("%d ", x);
-        visited[x] = true;
-        result[x] = cnt++;
-        for (int i : map[x]) {
-            if (!visited[i]) {
-                dfs(i);
-            }
-        }
-    }
-
-    public static void bfs(int x) {
-        ArrayDeque<Integer> q = new ArrayDeque<>();
-        q.offer(x);
-        visited[x] = true;
-        System.out.printf("%d ", x);
-
-        while (!q.isEmpty()) {
-            int now = q.poll();
-            for (int m : map[now]) {
+        bf회
                 if (!visited[m]) {
                     q.offer(m);
                     visited[m] = true;
