@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_DFS_BFS {
     static boolean[] visited;
     static ArrayList<Integer>[] map; // 간선 저장하는 ArrayList 배열 map
     static int[] result;
@@ -37,7 +37,7 @@ public class Main {
         System.out.println();
         // visited 초기화 후 BFS 진행
         Arrays.fill(visited, false);
-        bf회
+        bfs(V);
                 if (!visited[m]) {
                     q.offer(m);
                     visited[m] = true;

@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_알고리즘수업 {
     static boolean[] visited; // 방문 여부 저장
     static ArrayList<Integer>[] map; // ArrayList로 선언
     static int[] result; // 방문 순서 저장
