@@ -17,7 +17,7 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-class Node implements Comparable<Node>{
+/*class Node implements Comparable<Node>{
 	int to;
 	int cost;
 	
@@ -31,7 +31,7 @@ class Node implements Comparable<Node>{
 		// 우선순위 큐에서 비용 작은 노드가 먼저 오도록
 		return this.cost-o.cost;
 	}
-}
+}*/
 
 public class Main_최소비용구하기 {
 	static List<Node>[] list; // 간선 정보 저장
