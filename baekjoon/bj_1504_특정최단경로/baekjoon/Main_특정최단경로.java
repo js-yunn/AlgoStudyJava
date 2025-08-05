@@ -29,24 +29,22 @@ class Node implements Comparable<Node>{
 }
 
 public class Main_특정최단경로 {
+	static int INF = 200_000_100;
+	static int N, M;
 	static List<Node>[] list;
-	static int[] dp;
-	static boolean[] check;
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = null;
-		st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
-		list = (ArrayList<Node>[]) new ArrayList[N+1];
-		dp = new int[N+1];
-		check = new boolean[N+1];
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 		
 		// 인접 리스트 초기화
+		list = new ArrayList[N+1];
 		for (int i=1; i<N+1; i++) {
-			list[i]=new ArrayList<>();
+			list[i]=new ArrayList<Node>();
 		}
+		
 		// 간선 저장
 		for (int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -62,45 +60,50 @@ public class Main_특정최단경로 {
 		int start = 1;
 		int end = N;
 		
-		int min_ans = 0;
 		// 1->v1->v2->N
-		int tmp = 0;
-		tmp+=Dijkstra(start, v1);
-		tmp+=Dijkstra(v1, v2);
-		tmp+=Dijkstra(v2, end);
-		min_ans = tmp;
+		int tmp1 = 0;
+		tmp1+=Dijkstra(start, v1);
+		tmp1+=Dijkstra(v1, v2);
+		tmp1+=Dijkstra(v2, end);
 		
 		// 1->v2->v1->N
-		tmp = 0;
-		tmp+=Dijkstra(start, v2);
-		tmp+=Dijkstra(v2, v1);
-		tmp+=Dijkstra(v1, end);
-		min_ans=Math.min(min_ans, tmp);
+		int tmp2 = 0;
+		tmp2+=Dijkstra(start, v2);
+		tmp2+=Dijkstra(v2, v1);
+		tmp2+=Dijkstra(v1, end);
+		
+		int min_ans = (tmp1>=INF && tmp2>=INF) ? -1: Math.min(tmp1, tmp2);
+		
 		System.out.println(min_ans);
 		
 	}
 	public static int Dijkstra(int start, int end) {
 		Queue<Node> q = new PriorityQueue<>();
-		Arrays.fill(dp, Integer.MAX_VALUE);
-		boolean[] check = new boolean[dp.length];
-		dp[start]=0;
+		int[] distance = new int[N+1];
+		for (int i=0; i<=N; i++) {
+			distance[i]=INF;
+		}
+		
 		q.add(new Node(start, 0));
+		distance[start]=0;
 		
 		while(!q.isEmpty()) {
 			Node node = q.poll();
 			int to = node.to;
-			if (check[to]) continue;
-			check[node.to]=true;
-			for (int i=0; i<list[node.to].size(); i++) {
-				Node next = list[node.to].get(i);
-				
-				if(dp[next.to]>=dp[to]+next.cost) {
-					dp[next.to]=dp[to]+next.cost;
-					q.offer(new Node(next.to, dp[next.to]));
+			int dist = node.cost;
+			if (distance[to]<dist) continue;
+			//check[node.to]=true;
+			for (Node next: list[to]) {
+				int nextNum = next.to;
+				int nextDist = next.cost;
+				int cost = dist+nextDist;
+				if (cost<distance[nextNum]) {
+					distance[nextNum]=cost;
+					q.add(new Node(nextNum, cost));
 				}
 			}
 		}
-		return dp[end];
+		return distance[end];
 		
 		
 	}
