@@ -26,10 +26,11 @@ public class Main_0807 {
 		Arrays.fill(distance, -1);
 		distance[X]=0;
 		
+		// BFS를 위한 큐 초기화
 		Queue<Integer> q = new LinkedList<>();
-		q.add(X);
+		q.add(X); // 시작 도시
 		
-		while(!q.isEmpty()) {
+		while(!q.isEmpty()) { // BFS 수행
 			int now = q.poll();
 			for (int next: map.get(now)) {
 				if(distance[next] ==-1) {
@@ -38,6 +39,7 @@ public class Main_0807 {
 				}
 			}
 		}
+		// 거리 K인 도시 출력
 		boolean flag = false;
 		for (int i=1; i<=N; i++) {
 			if (distance[i]==K) {
@@ -45,6 +47,7 @@ public class Main_0807 {
 				flag = true;
 			}
 		}
+		// 거리 K인 도시가 하나도 없으면 -1 출력
 		if (!flag) {
 			System.out.println(-1);
 		}
