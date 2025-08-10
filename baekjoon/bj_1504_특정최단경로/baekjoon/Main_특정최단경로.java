@@ -12,7 +12,7 @@ package baekjoon;
 import java.util.*;
 import java.io.*;
 
-class Node implements Comparable<Node>{
+/*class Node implements Comparable<Node>{
 	int to;
 	int cost;
 	
@@ -26,9 +26,9 @@ class Node implements Comparable<Node>{
 		return this.cost-o.cost;
 	}
 	
-}
+}*/
 
-public class Main_특정최단경로 {
+public class Main_�듅�젙理쒕떒寃쎈줈 {
 	static int INF = 200_000_100;
 	static int N, M;
 	static List<Node>[] list;
@@ -39,20 +39,20 @@ public class Main_특정최단경로 {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		
-		// 인접 리스트 초기화
+		// �씤�젒 由ъ뒪�듃 珥덇린�솕
 		list = new ArrayList[N+1];
 		for (int i=1; i<N+1; i++) {
 			list[i]=new ArrayList<Node>();
 		}
 		
-		// 간선 저장
+		// 媛꾩꽑 ���옣
 		for (int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int from = Integer.parseInt(st.nextToken());
 			int to = Integer.parseInt(st.nextToken());
 			int cost = Integer.parseInt(st.nextToken());
 			list[from].add(new Node(to, cost));
-			list[to].add(new Node(from, cost)); // 양방향 처리
+			list[to].add(new Node(from, cost)); // �뼇諛⑺뼢 泥섎━
 		}
 		st = new StringTokenizer(br.readLine());
 		int v1 = Integer.parseInt(st.nextToken());

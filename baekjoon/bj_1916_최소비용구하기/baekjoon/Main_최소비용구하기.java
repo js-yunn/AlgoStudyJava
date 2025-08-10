@@ -17,7 +17,7 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-class Node implements Comparable<Node>{
+/*class Node implements Comparable<Node>{
 	int to;
 	int cost;
 	
@@ -28,15 +28,15 @@ class Node implements Comparable<Node>{
 
 	@Override
 	public int compareTo(Node o) {
-		// 우선순위 큐에서 비용 작은 노드가 먼저 오도록
+		// �슦�꽑�닚�쐞 �걧�뿉�꽌 鍮꾩슜 �옉�� �끂�뱶媛� 癒쇱� �삤�룄濡�
 		return this.cost-o.cost;
 	}
-}
+}*/
 
-public class Main_최소비용구하기 {
-	static List<Node>[] list; // 간선 정보 저장
-	static int[] dp; // 시작 도시에서 각 도시까지 최소 비용 저장
-	static boolean[] check; // 방문 여부 저장
+public class Main_理쒖냼鍮꾩슜援ы븯湲� {
+	static List<Node>[] list; // 媛꾩꽑 �젙蹂� ���옣
+	static int[] dp; // �떆�옉 �룄�떆�뿉�꽌 媛� �룄�떆源뚯� 理쒖냼 鍮꾩슜 ���옣
+	static boolean[] check; // 諛⑸Ц �뿬遺� ���옣
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -46,18 +46,18 @@ public class Main_최소비용구하기 {
 		list =(ArrayList<Node>[]) new ArrayList[N+1];
 		dp = new int[N+1];
 		check = new boolean[N+1];
-		// 도시의 인접 리스트 초기화
+		// �룄�떆�쓽 �씤�젒 由ъ뒪�듃 珥덇린�솕
 		for (int i=1; i<N+1; i++) {
 			list[i]=new ArrayList<>();
 		}
-		// 버스 정보 list에 저장
+		// 踰꾩뒪 �젙蹂� list�뿉 ���옣
 		for(int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
-			int from = Integer.parseInt(st.nextToken()); // 출발 도시
-			int to = Integer.parseInt(st.nextToken()); // 도착 도시
-			int cost = Integer.parseInt(st.nextToken()); // 비용
+			int from = Integer.parseInt(st.nextToken()); // 異쒕컻 �룄�떆
+			int to = Integer.parseInt(st.nextToken()); // �룄李� �룄�떆
+			int cost = Integer.parseInt(st.nextToken()); // 鍮꾩슜
 			
-			list[from].add(new Node(to, cost)); // 출발 도시 기준으로 간선 추가
+			list[from].add(new Node(to, cost)); // 異쒕컻 �룄�떆 湲곗��쑝濡� 媛꾩꽑 異붽�
 		}
 		
 		st = new StringTokenizer(br.readLine());
@@ -67,25 +67,25 @@ public class Main_최소비용구하기 {
 		System.out.println(dp[end]); 
 
 	}
-	// 다익스트라 알고리즘 구현
+	// �떎�씡�뒪�듃�씪 �븣怨좊━利� 援ы쁽
 	static void dijkstra(int start) {
 		Queue<Node> q = new PriorityQueue<>();
-		Arrays.fill(dp, Integer.MAX_VALUE); // 모든 비용 무한대로 초기화
+		Arrays.fill(dp, Integer.MAX_VALUE); // 紐⑤뱺 鍮꾩슜 臾댄븳��濡� 珥덇린�솕
 		dp[start]=0;
-		q.add(new Node(start, 0)); // 시작 노드 큐에 삽입
+		q.add(new Node(start, 0)); // �떆�옉 �끂�뱶 �걧�뿉 �궫�엯
 		
 		while(!q.isEmpty()) {
 			Node node = q.poll();
 			int to = node.to;
 			
-			if (check[to]) continue; // 이미 방문했다면 무시
-			check[node.to] = true; // 방문 처리
-			// 현재 도시와 연결된 모든 도시 탐색
+			if (check[to]) continue; // �씠誘� 諛⑸Ц�뻽�떎硫� 臾댁떆
+			check[node.to] = true; // 諛⑸Ц 泥섎━
+			// �쁽�옱 �룄�떆�� �뿰寃곕맂 紐⑤뱺 �룄�떆 �깘�깋
 			for (Node next: list[to]) {
-				// 현재보다 더 적은 비용 발견 시 갱신
+				// �쁽�옱蹂대떎 �뜑 �쟻�� 鍮꾩슜 諛쒓껄 �떆 媛깆떊
 				if (dp[next.to] >= dp[to]+next.cost) {
 					dp[next.to]=dp[to]+next.cost;
-					q.add(new Node(next.to, dp[next.to])); // 큐에 추가
+					q.add(new Node(next.to, dp[next.to])); // �걧�뿉 異붽�
 					
 				}
 			}
