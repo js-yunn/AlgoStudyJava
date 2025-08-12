@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="bj_1916_최소비용구하기"/>
 	<classpathentry kind="src" path="bj_1504_특정최단경로"/>
 	<classpathentry kind="src" path="bj_18352_특정거리도시찾기"/>
+	<classpathentry kind="src" path="bj_11286_절댓값힙"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
