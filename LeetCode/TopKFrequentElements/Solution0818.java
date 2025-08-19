@@ -2,7 +2,7 @@ package TopKFrequentElements;
 
 import java.util.*;
 
-class Solution {
+class Solution0818 {
     public int[] topKFrequent(int[] nums, int k) {
         // 숫자마다 빈도수 계산
         Map<Integer, Integer> map = new HashMap<>();
