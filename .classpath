@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="programmers/pr_베스트앨범"/>
 	<classpathentry kind="src" path="bj_상어초등학교"/>
 	<classpathentry kind="src" path="bj_4485_녹색옷젤다"/>
+	<classpathentry kind="src" path="LeetCode"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
