@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="bj_2477_참외밭"/>
 	<classpathentry kind="src" path="bj_22866_탑보기"/>
 	<classpathentry kind="src" path="bj_17406_배열돌리기4"/>
+	<classpathentry kind="src" path="bj_10868_최솟값"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
