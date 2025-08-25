@@ -17,8 +17,8 @@ public class Main_bj_10868_최솟값 {
 		for (int i=1; i<=N; i++) {
 			arr[i]=Integer.parseInt(br.readLine());
 		}
-		int height = (int)Math.ceil(Math.log(N)/Math.log(2))+1; // 트리 높이 계산
-		int nodeCnt = (int)Math.pow(2, height);
+		int height = (int)Math.ceil(Math.log(N)/Math.log(2))+1; // 트리 높이 (logN 올림 +1) 계산
+		int nodeCnt = (int)Math.pow(2, height); // 트리 전체 노드 수(2^height) 계산
 		tree = new long[nodeCnt];
 		
 		init(1, N, 1);
