@@ -42,8 +42,8 @@ class Solution_0826 {
         }
 
         int currentRecord = record[step];
-        int color = Math.abs(currentRecord);
-        boolean isPositive = currentRecord > 0;
+        int color = Math.abs(currentRecord); // 유도색 절대값 color에 저장
+        boolean isPositive = currentRecord > 0; // 양수 음수 저장
 
         for (int[] edge : graph.getOrDefault(current, new ArrayList<>())) {
             int next = edge[0];
@@ -51,12 +51,12 @@ class Solution_0826 {
             int roadLength = edge[1];
 
             if (roadColor == color) {
-                // 최단 경로 상 포함 여부 판단
+                // dist[현재][다음]+dist[다음][목적지]==dist[현재][목적지]이면 최단 경로에 포함됨
                 boolean onShortestPath = (dist[current][next] + dist[next][end] == dist[current][end]);
 
                 if ((isPositive && onShortestPath) || (!isPositive && !onShortestPath)) {
-                    if (findPath(next, end, record, step + 1)) {
-                        return true;
+                    if (findPath(next, end, record, step + 1)) { // 다음 단계 재귀 호출
+                        return true; // 유효한 경로 찾았으므로 true 반환
                     }
                 }
             }
@@ -71,7 +71,7 @@ class Solution_0826 {
         // 그래프와 dist 초기화
         graph.clear(); // 기존 static graph를 초기화
         
-        // 그래프 구성
+        // 그래프 생성
         for (int[] road : roads) {
             int u = road[0];
             int v = road[1];
@@ -79,10 +79,11 @@ class Solution_0826 {
             int color = road[3];
             // 그래프에서 u에 대한 인접 리스트가 없으면 v로 가는 간선을 새로 만듦
             graph.computeIfAbsent(u, k -> new ArrayList<>()).add(new int[]{v, length, color});
+            // 양방향이므로 v에도 추가
             graph.computeIfAbsent(v, k -> new ArrayList<>()).add(new int[]{u, length, color});
         }
         
-        // 모든 교차로에 대해 다익스트라 실행
+        // 모든 교차로에 대해 다익스트라 실행, 모든 교차로에 대한 최단 거리 dist 배열에 저장
         for (int i = 1; i <= N; i++) {
             dijkstra(i);
         }
@@ -100,9 +101,9 @@ class Solution_0826 {
         // 결과 정렬
         result.sort((a, b) -> {
             if (a[0] != b[0]) {
-                return Integer.compare(a[0], b[0]);
+                return Integer.compare(a[0], b[0]); // 출발 교차로 기준 오름차순
             }
-            return Integer.compare(a[1], b[1]);
+            return Integer.compare(a[1], b[1]); // 목적지 교차로 기준 오름차순
         });
         
         return result.toArray(new int[0][]);
