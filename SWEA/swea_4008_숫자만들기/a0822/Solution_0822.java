@@ -34,12 +34,12 @@ public class Solution_0822 {
             // DFS 1부터 탐색 시작.
             dfs(1, number[0]); 
 
-            System.out.println("#" + t + " " + (maxVal - minVal));
+            System.out.println("#" + t + " " + (maxVal - minVal)); // 최대 최소 차이 출력
         }
     }
 
     public static void dfs(int depth, int sum) {
-        if (depth == N) {
+        if (depth == N) { // 모든 경우의 수 탐색이 끝나면 maxVal, minVal 갱신
             minVal = Math.min(minVal, sum);
             maxVal = Math.max(maxVal, sum);
             return;
