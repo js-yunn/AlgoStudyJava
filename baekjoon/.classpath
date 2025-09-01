@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="bj_14267_회사문화1"/>
 	<classpathentry kind="src" path="bj_10775_공항"/>
 	<classpathentry kind="src" path="bj_1600_말이되고픈원숭이"/>
+	<classpathentry kind="src" path="bj_1018_체스판다시칠하기"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
