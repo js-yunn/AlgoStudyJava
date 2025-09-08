@@ -18,5 +18,6 @@
 	<classpathentry kind="src" path="bj_1600_말이되고픈원숭이"/>
 	<classpathentry kind="src" path="bj_1018_체스판다시칠하기"/>
 	<classpathentry kind="src" path="bj_1806_부분합"/>
+	<classpathentry kind="src" path="bj_2529_부등호"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
