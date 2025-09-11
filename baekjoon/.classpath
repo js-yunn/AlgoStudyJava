@@ -23,5 +23,6 @@
 	<classpathentry kind="src" path="bj_9251_LCS"/>
 	<classpathentry kind="src" path="bj_5052_전화번호목록"/>
 	<classpathentry kind="src" path="bj_11585_속타는저녁메뉴"/>
+	<classpathentry kind="src" path="bj_9253_스페셜저지"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
