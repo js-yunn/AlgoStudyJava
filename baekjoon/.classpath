@@ -3,9 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="bj_1012_유기농배추"/>
 	<classpathentry kind="src" path="bj_24479_알고리즘수업"/>
-	<classpathentry kind="src" path="bj_DFS_BFS"/>
-	<classpathentry kind="src" path="bj_1916_최소비용구하기"/>
-	<classpathentry kind="src" path="bj_1504_특정최단경로"/>
 	<classpathentry kind="src" path="bj_18352_특정거리도시찾기"/>
 	<classpathentry kind="src" path="bj_11286_절댓값힙"/>
 	<classpathentry kind="src" path="bj_16926_배열돌리기"/>

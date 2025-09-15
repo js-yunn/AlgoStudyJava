@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main_22866_Å¾º¸±â_0815 {
+public class Main_22866_íƒ‘ë³´ê¸°_0815 {
 
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -11,24 +11,24 @@ public class Main_22866_Å¾º¸±â_0815 {
 		for (int i=1; i<=N; i++) {
 			height[i]=Integer.parseInt(st.nextToken());
 		}
-		int[] seeCnt = new int[N+1]; // º¼ ¼ö ÀÖ´Â °Ç¹° °³¼ö
-		int[] nearest = new int[N+1]; // °¡Àå °¡±î¿î °Ç¹°
+		int[] seeCnt = new int[N+1]; // ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ç¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int[] nearest = new int[N+1]; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½
 		Arrays.fill(nearest, Integer.MAX_VALUE);
 		
 		Stack<Integer> stack = new Stack<>();
 		// L->R
 		for (int i=1; i<=N; i++) {
-			// height[i] º¸´Ù ³·´Ù¸é pop
+			// height[i] ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ pop
 			while(!stack.isEmpty() && height[stack.peek()]<=height[i]) {
 				stack.pop();
 			}
-			seeCnt[i] += stack.size(); // º¸ÀÌ´Â °Ç¹° °³¼ö ÀúÀå
+			seeCnt[i] += stack.size(); // ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Ç¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (!stack.isEmpty()) {
 				nearest[i]=stack.peek();
 			}
-			stack.push(i); // ÇöÀç °Ç¹°ÀÌ stack¿¡¼­ °¡Àå ³·Àº °Ç¹°ÀÌ¹Ç·Î push
+			stack.push(i); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ï¿½ï¿½ stackï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ï¿½Ì¹Ç·ï¿½ push
 		}
-		stack.clear(); // L->R ¿Ï·á ÈÄ ÃÊ±âÈ­
+		stack.clear(); // L->R ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½È­
 		// R->L
 		for (int i=N; i>=1; i--) {
 			while(!stack.isEmpty() && height[stack.peek()]<=height[i]) {
@@ -36,7 +36,7 @@ public class Main_22866_Å¾º¸±â_0815 {
 			}
 			seeCnt[i]+= stack.size();
 			if (!stack.isEmpty()) {
-				// °¡Àå °¡±î¿î °Ç¹° È®ÀÎÇÏ°í ÇöÀçº¸´Ù ¸Ö´Ù¸é nearest[i] °»½Å
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½çº¸ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ nearest[i] ï¿½ï¿½ï¿½ï¿½
 				if (Math.abs(nearest[i]-i)>Math.abs(stack.peek()-i)) {
 					nearest[i]=stack.peek();
 				}

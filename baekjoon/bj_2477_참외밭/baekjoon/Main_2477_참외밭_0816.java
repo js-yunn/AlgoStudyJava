@@ -2,7 +2,7 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-public class Main_2477_Âü¿Ü¹ç_0816 {
+public class Main_2477_ì°¸ì™¸ë°­_0816 {
 
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,13 +17,13 @@ public class Main_2477_Âü¿Ü¹ç_0816 {
 			st = new StringTokenizer(br.readLine());
 			dir[i] = Integer.parseInt(st.nextToken());
 			len[i] = Integer.parseInt(st.nextToken());
-			// °¡·Î º¯ Ã£±â
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½
 			if (dir[i]==1 || dir[i]==2) {
 				if (maxX<len[i]) {
 					maxX = len[i];
 					indexX = i;
 				}
-			} else { // ¼¼·Î º¯ Ã£±â
+			} else { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½
 				if (maxY<len[i]) {
 					maxY = len[i];
 					indexY = i;
@@ -31,10 +31,10 @@ public class Main_2477_Âü¿Ü¹ç_0816 {
 			}
 			
 		}
-		// Å« »ç°¢Çü ³ÐÀÌ totalArea
+		// Å« ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ totalArea
 		int totalArea = maxX*maxY;
 
-		// ÀÛÀº »ç°¢Çü ³ÐÀÌ smallArea
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ç°¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ smallArea
 		int smallX = Math.abs(len[(indexY+5)%6]-len[(indexY+1)%6]);
 		int smallY = Math.abs(len[(indexX+5)%6]-len[(indexX+1)%6]);
 		int smallArea = smallX*smallY;
