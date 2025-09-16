@@ -23,5 +23,6 @@
 	<classpathentry kind="src" path="bj_9253_스페셜저지"/>
 	<classpathentry kind="src" path="bj_1038_감소하는수"/>
 	<classpathentry kind="src" path="bj_1786_찾기"/>
+	<classpathentry kind="src" path="bj_11437_LCA"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
