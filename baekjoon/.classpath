@@ -25,5 +25,6 @@
 	<classpathentry kind="src" path="bj_1786_찾기"/>
 	<classpathentry kind="src" path="bj_11437_LCA"/>
 	<classpathentry kind="src" path="bj_5670_휴대폰자판"/>
+	<classpathentry kind="src" path="bj_1068_트리"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
