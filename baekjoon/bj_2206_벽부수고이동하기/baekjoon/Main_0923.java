@@ -18,7 +18,7 @@ public class Main_0923 {
 			System.out.println(1);
 			System.exit(0);
 		}
-		// NxM 맵 행렬 생성 (1과 0이 값으로 들어옴)
+		// 입력받기
 		map = new int[n][m];
 		for (int i = 0; i < map.length; i++) {
 			String str = br.readLine();
@@ -36,10 +36,9 @@ public class Main_0923 {
 	private static int bfs() {
 		// 방문을 체크하는 3차원 배열
 		int[][][] check = new int[2][n][m];
-		// [0, n, m] : 벽 안부수고 지나가는 방문노드 경로
-		// [1, n, m] : 벽 부수고 지나가는 방문노드 경로
+		// [0, n, m] : 벽 안부수는 방문경로
+		// [1, n, m] : 벽 부수는 방문경로
 
-		// 동서남북
 		int[] ax = { 0, 0, -1, 1 };
 		int[] ay = { -1, 1, 0, 0 };
 
@@ -53,7 +52,7 @@ public class Main_0923 {
 			if (node == null) {
 				return -1;
 			}
-			int w = node[0];// broken wall or unbroken wall
+			int w = node[0];// 벽
 			int x = node[1];
 			int y = node[2];
 
