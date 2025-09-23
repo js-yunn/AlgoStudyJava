@@ -30,5 +30,6 @@
 	<classpathentry kind="src" path="bj_1755_숫자놀이"/>
 	<classpathentry kind="src" path="bj_2667_단지번호붙이기"/>
 	<classpathentry kind="src" path="bj_2206_벽부수고이동하기"/>
+	<classpathentry kind="src" path="bj_19542_전단지돌리기"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
