@@ -42,5 +42,8 @@
 	<classpathentry kind="src" path="bj_2138_전구와스위치"/>
 	<classpathentry kind="src" path="bj_16946_벽부수고이동하기4"/>
 	<classpathentry kind="src" path="bj_16234_인구이동"/>
+	<classpathentry kind="src" path="bj_1283_단축키지정"/>
+	<classpathentry kind="src" path="bj_17144_미세먼지안녕"/>
+	<classpathentry kind="src" path="bj_1647_도시분할계획"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
