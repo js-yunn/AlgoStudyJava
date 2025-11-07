@@ -50,5 +50,6 @@
 	<classpathentry kind="src" path="bj_1987_알파벳"/>
 	<classpathentry kind="src" path="bj_11657_타임머신"/>
 	<classpathentry kind="src" path="bj_11000_강의실배정"/>
+	<classpathentry kind="src" path="bj_13904_과제"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
