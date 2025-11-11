@@ -51,5 +51,9 @@
 	<classpathentry kind="src" path="bj_11657_타임머신"/>
 	<classpathentry kind="src" path="bj_11000_강의실배정"/>
 	<classpathentry kind="src" path="bj_13904_과제"/>
+	<classpathentry kind="src" path="bj_1781_컵라면"/>
+	<classpathentry kind="src" path="bj_1744_수묶기"/>
+	<classpathentry kind="src" path="bj_1202_보석도둑"/>
+	<classpathentry kind="src" path="bj_2109_순회강연"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
