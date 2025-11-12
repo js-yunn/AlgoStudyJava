@@ -21,6 +21,11 @@ public class Main_1111 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
+		if (N==1) {
+			System.out.println(0);
+			return;
+		}
+		
 		al = new ArrayList[N+1];
 		for (int i=1; i<=N; i++) {
 			al[i]= new ArrayList<>();
@@ -72,4 +77,6 @@ public class Main_1111 {
 3. 최대 거리 노드 갱신, 그 노드를 시작점으로 재설정
 4. 새로운 시작점으로부터 다시 DFS 탐색 수행
 5. 가장 멀리 떨어진 노드 찾고 두 노드 사이 거리가 트리의 지름임
+
+NullPointerException 발생 -> N=1일 때 처리를 안 함!!!
 */
