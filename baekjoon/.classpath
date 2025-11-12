@@ -55,5 +55,6 @@
 	<classpathentry kind="src" path="bj_1744_수묶기"/>
 	<classpathentry kind="src" path="bj_1202_보석도둑"/>
 	<classpathentry kind="src" path="bj_2109_순회강연"/>
+	<classpathentry kind="src" path="bj_1967_트리의지름"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
