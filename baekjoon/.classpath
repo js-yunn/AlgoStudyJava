@@ -58,5 +58,6 @@
 	<classpathentry kind="src" path="bj_1967_트리의지름"/>
 	<classpathentry kind="src" path="bj_16437_양구출작전"/>
 	<classpathentry kind="src" path="bj_1577_도로의개수"/>
+	<classpathentry kind="src" path="bj_2169_로봇조종하기"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
