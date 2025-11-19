@@ -21,7 +21,7 @@ public class Main_1121 {
 				forest[i][j]=Integer.parseInt(st.nextToken());
 			}
 		}
-		int maxResult = 0;
+		int maxResult = 0; // 이동할 수 있는 최대 칸 수
 		for (int i=0; i<N; i++) {
 			for (int j=0; j<N; j++) {
 				maxResult = Math.max(maxResult, dfs(i,j));
@@ -33,7 +33,7 @@ public class Main_1121 {
 
 	private static int dfs(int x, int y) {
 		if (visited[x][y]!=0) {
-			return visited[x][y];
+			return visited[x][y]; // 이미 방문한 곳이면 리턴
 		}
 		visited[x][y]=1;
 		
@@ -41,7 +41,7 @@ public class Main_1121 {
 			int nx = x+dx[i];
 			int ny = y+dy[i];
 			if (nx>=0 && nx<N && ny>=0 && ny<N && forest[nx][ny]>forest[x][y]) {
-				visited[x][y]=Math.max(visited[nx][ny], dfs(nx, ny)+1);
+				visited[x][y]=Math.max(visited[x][y], dfs(nx, ny)+1); // visited[x][y] 최장경로 갱신
 			}
 		}
 		return visited[x][y];
@@ -54,5 +54,5 @@ public class Main_1121 {
 dfs를 해야하는데 완전 탐색으로 하면 무조건 메모리 터짐 -> visited 배열을 정수로 선언하기
 dfs 진행하면서 최장 경로 갱신 : Math.max(visited[x][y], dfs(nx,ny)+1)
 이미 방문한 곳이면 visited[x][y] 리턴하기
-
+아니면 상하좌우로 돌면서 visited(x,y) 최장 경로 갱신
 */
