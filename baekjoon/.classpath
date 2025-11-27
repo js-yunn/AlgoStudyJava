@@ -64,5 +64,6 @@
 	<classpathentry kind="src" path="bj_4354_문자열제곱"/>
 	<classpathentry kind="src" path="bj_2805_나무자르기"/>
 	<classpathentry kind="src" path="bj_1939_중량제한"/>
+	<classpathentry kind="src" path="bj_24337_가희와탑"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
