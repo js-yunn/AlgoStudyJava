@@ -65,5 +65,10 @@
 	<classpathentry kind="src" path="bj_2805_나무자르기"/>
 	<classpathentry kind="src" path="bj_1939_중량제한"/>
 	<classpathentry kind="src" path="bj_24337_가희와탑"/>
+	<classpathentry kind="src" path="bj_1520_내리막길"/>
+	<classpathentry kind="src" path="bj_1562_계산수"/>
+	<classpathentry kind="src" path="bj_3190_뱀"/>
+	<classpathentry kind="src" path="bj_1366_기타코드"/>
+	<classpathentry kind="src" path="bj_1300_k번째수"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
