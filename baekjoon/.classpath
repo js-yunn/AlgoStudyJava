@@ -70,5 +70,6 @@
 	<classpathentry kind="src" path="bj_3190_뱀"/>
 	<classpathentry kind="src" path="bj_1366_기타코드"/>
 	<classpathentry kind="src" path="bj_1300_k번째수"/>
+	<classpathentry kind="src" path="bj_1238_파티"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
